@@ -23,5 +23,11 @@ env_variables:
 Dockerfile
 
 ```
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+ADD / /app
+EXPOSE 8080
+ENV ASPNETCORE_URLS=http://*:8080
+WORKDIR /app
+ENTRYPOINT [ "dotnet", "POSapi.dll"]
 
 ```
